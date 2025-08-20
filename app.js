@@ -116,7 +116,7 @@ app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong" } = err;
   res.status(statusCode).render("error.ejs", { message });
 });
-
-app.listen(8080, () => {
-  console.log("server is listening to port 8080");
+const port = process.env.PORT;
+app.listen(port, () => {
+  console.log(`server is listening to port ${port}`);
 });

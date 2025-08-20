@@ -118,6 +118,11 @@ app.use("/",userRoutes);
 //  });
 //  res.send("successful testing");
 // });
+
+app.get("/", (req, res) => {
+    res.send("Welcome to Wanderslist 🌍");
+  });
+  
 app.use((err, req, res, next)=>{
     const {statusCode=500, message="Something went wrong"} = err;
    res.status(statusCode).render("error.ejs", {message});

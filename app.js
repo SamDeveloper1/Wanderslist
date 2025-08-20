@@ -71,7 +71,10 @@ app.use(express.static(path.join(__dirname, "/public")));
 // app.get("/", (req,res)=>{
 //     res.send("root is working");
 // })
-
+// Add this route handler (uncomment your existing one or use this)
+app.get("/", (req, res) => {
+    res.redirect("/listings");// Or whatever your main page is
+});
 app.use(session(sessionOptions));
 app.use(flash());
 app.use(passport.initialize());
@@ -116,7 +119,7 @@ app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong" } = err;
   res.status(statusCode).render("error.ejs", { message });
 });
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`server is listening to port ${port}`);
 });

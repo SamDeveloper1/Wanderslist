@@ -10,7 +10,7 @@ Admins can **list, update, and delete** hostels, hotels, and PGs, while users ca
 
 | Layer | Technology | Purpose |
 |-------|-------------|----------|
-| **Frontend** | React.js | Component-based UI, asynchronous API communication |
+| **Frontend** | HTML, CSS, JavaScript | Component-based UI, asynchronous API communication |
 | **Backend** | Node.js + Express.js | REST API server handling HTTP requests |
 | **Database** | MongoDB (Atlas) | Cloud-hosted NoSQL database |
 | **Authentication** | Passport.js | User authentication and session management |

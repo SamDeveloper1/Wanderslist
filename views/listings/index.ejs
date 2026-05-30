@@ -3,103 +3,33 @@
   #filters {
     display: flex;
     align-items: center;
-    overflow-x: auto;
-    gap: 0.5rem;
-    padding: 1rem 0;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-  }
-  #filters::-webkit-scrollbar {
-    height: 4px;
-  }
-  #filters::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 2px;
+    flex-wrap: wrap;
   }
   .filter {
     text-align: center;
-    padding: 0.5rem 0.75rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
     opacity: 0.7;
-    flex-shrink: 0;
-    min-width: 60px;
   }
   .filter:hover {
     opacity: 1;
     cursor: pointer;
   }
   .filter p {
-    font-size: 0.7rem;
-    margin-bottom: 0;
-    white-space: nowrap;
+    font-size: 0.8rem;
   }
-  .filter i {
-    font-size: 1.25rem;
-  }
-  .tax-toggle {
+  .tax-toggle{
     border: 1px solid rgba(111, 108, 108, 0.896);
     border-radius: 1rem;
-    margin: 0.5rem 0;
-    padding: 0.5rem 0.75rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    height: 3rem;
     display: flex;
+    padding: 1rem;
     align-items: center;
-    flex-shrink: 0;
-    font-size: 0.85rem;
-  }
-  .tax-toggle .form-check-label {
-    white-space: nowrap;
   }
   .tax-info {
     display: none;
-  }
-  .listings-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  @media (min-width: 576px) {
-    .listings-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .filter {
-      min-width: 70px;
-      padding: 0.75rem 1rem;
-    }
-    .filter p {
-      font-size: 0.75rem;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .filter {
-      padding: 1rem 1.25rem;
-    }
-    .filter p {
-      font-size: 0.8rem;
-    }
-    .tax-toggle {
-      margin-left: 1rem;
-      padding: 0.75rem 1rem;
-      font-size: 0.9rem;
-    }
-  }
-  
-  @media (min-width: 992px) {
-    .listings-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .filter {
-      padding: 1.5rem;
-    }
-    .tax-toggle {
-      margin-left: 2rem;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .listings-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
   }
 </style>
 <div id="filters">
@@ -161,15 +91,20 @@
     </div>
   </div>
 </div>
-
-<div class="listings-grid mt-3">
+<!-- <h3>All Listings</h3> -->
+<br />
+<!-- <form method="GET" action="/listings/new">
+        <button>Create New Listing</button>
+    </form> -->
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
   <%for(let listing of allListings){%>
   <a href="/listings/<%= listing._id %>" class="listing-links">
-    <div class="card listing-card h-100">
+    <div class="card listing-card">
       <img
         src="<%= listing.image.url %>"
         class="card-img-top"
         alt="listing_image"
+        style="height: 20rem"
       />
       <div class="card-body">
         <div class="card-img-overlay"></div>
@@ -185,7 +120,11 @@
   <%}%>
 </div>
 
-
+<ul>
+  <%for(let listing of allListings){%>
+  <li><a href="/listings/<%=listing._id %> "> <%=listing.title%></a></li>
+  <%}%>
+</ul>
 <script>
   let taxSwitch = document.getElementById("switchCheckDefault");
   taxSwitch.addEventListener("click", () => {

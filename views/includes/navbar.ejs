@@ -1,21 +1,61 @@
 <style>
-  .btn-search{
+  .btn-search {
     color: #fff;
     background-color: #fe424d;
-    padding: 0 1rem 0 1rem;
-  }
-  .btn-search:hover{
-    color: #fff;
-    background-color: #fe424d;
-   
-  }
-  .btn-search i{
-    display: inline;
-    margin-right: 0.5rem;
-  }
-  .search-inp{
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
     border-radius: 25px;
-    padding: 0.5rem 3rem 0.5rem 3rem;
+  }
+  .btn-search:hover {
+    color: #fff;
+    background-color: #e03a44;
+  }
+  .btn-search i {
+    display: none;
+  }
+  .search-inp {
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    min-width: 0;
+    flex: 1;
+  }
+  .search-form {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .navbar-nav-auth {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+  
+  @media (min-width: 768px) {
+    .btn-search i {
+      display: inline;
+      margin-right: 0.5rem;
+    }
+    .search-inp {
+      padding: 0.5rem 1.5rem;
+      width: auto;
+      min-width: 200px;
+      flex: none;
+    }
+    .search-form {
+      width: auto;
+      flex-wrap: nowrap;
+    }
+    .navbar-nav-auth {
+      flex-direction: row;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .search-inp {
+      padding: 0.5rem 2rem;
+      min-width: 250px;
+    }
   }
 </style>
 
@@ -27,6 +67,9 @@
         type="button"
         data-bs-toggle="collapse" 
         data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
         >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,14 +77,14 @@
         <div class="navbar-nav">
           <a class="nav-link" href="/listings">Explore</a>
         </div>
-        <div class="navbar-nav ms-auto">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2 search-inp" type="search" placeholder="Search Destinations" />
+        <div class="navbar-nav ms-md-auto my-2 my-md-0 w-100 w-md-auto">
+          <form class="d-flex search-form" role="search">
+            <input class="form-control search-inp" type="search" placeholder="Search Destinations" aria-label="Search" />
             <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
           </form>
         </div>
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/listings/new">Airbnb Your home</a>
+        <div class="navbar-nav navbar-nav-auth ms-md-auto">
+          <a class="nav-link" href="/listings/new">Add Listing</a>
 
           <%if(!currUser){%>
             <a class="nav-link" href="/signup"><b>SignUp</b></a>

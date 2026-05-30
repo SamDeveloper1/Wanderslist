@@ -1,32 +1,49 @@
+/* =============================================
+   MOBILE-FIRST RESPONSIVE STYLES
+   ============================================= */
+
+/* Base Styles */
 body {
   font-family: "Plus Jakarta Sans", sans-serif !important;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
 .container {
   flex: 1;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
+
+/* Navbar */
 .navbar {
-  height: 5rem;
+  min-height: 5rem;
+  height: auto;
   background-color: white;
+  padding: 0.5rem 1rem;
 }
+
 .fa-compass {
   color: #fe424d;
   font-size: 2rem;
 }
+
 .nav-link {
   color: #222222 !important;
 }
 
-/* footer */
+/* Footer - Mobile First */
 .f-info-links a {
   text-decoration: none;
   color: #222222;
+  padding: 0.25rem 0.5rem;
 }
+
 .f-info-links a:hover {
   text-decoration: underline;
 }
+
 .f-info-links,
 .f-info-socials,
 .f-info-brand {
@@ -34,67 +51,188 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0.5rem 0;
 }
+
 .f-info-socials i {
   font-size: 1.2rem;
-  margin-right: 1rem;
+  margin: 0 0.5rem;
 }
+
 .f-info {
   text-align: center;
-  height: 8rem;
+  min-height: 8rem;
+  height: auto;
   background-color: #ebebeb;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: space-evenly;
+  align-items: center;
+  padding: 1rem 0.5rem;
 }
-/* cards */
+
+/* Cards - Mobile First */
 .listing-card {
   border: none !important;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
+
 .card-img-top {
   border-radius: 1rem !important;
   width: 100% !important;
   object-fit: cover;
+  height: 15rem;
 }
+
 .card-body {
-  padding: 0 !important;
+  padding: 0.5rem 0 !important;
 }
+
 .card-text {
   font-weight: 400 !important;
+  font-size: 0.9rem;
 }
+
 .listing-links {
   text-decoration: none;
 }
-/* card effects */
+
+/* Card Effects */
 .card-img-overlay {
   opacity: 0;
 }
+
 .card-img-overlay:hover {
   opacity: 0.2;
   background-color: white;
 }
-/* new page */
-.add-btn {
-  background-color: #fe424d !important;
-  border: none !important;
-}
-/* edit page */
+
+/* Buttons */
+.add-btn,
 .edit-btn {
   background-color: #fe424d !important;
   border: none !important;
+  width: 100%;
 }
-/* show page */
+
+/* Show Page */
 .btns {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 1rem;
 }
+
+.btns .btn {
+  width: 100%;
+  margin: 0 !important;
+}
+
+.btns form {
+  width: 100%;
+}
+
+.btns form .btn {
+  width: 100%;
+}
+
 .show-card {
   padding-left: 0;
   padding-right: 0;
 }
-/* Map */
+
+.show-img {
+  height: auto;
+  max-height: 25rem;
+}
+
+/* Map - Responsive */
 #map {
-  height: 400px;
-  width: 80vh;
+  height: 300px;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+/* Review Cards */
+.review-card {
+  margin-bottom: 1rem;
+}
+
+/* Forms */
+.form-container {
+  padding: 0 0.5rem;
+}
+
+/* Flash Messages */
+.alert {
+  margin: 1rem 0;
+}
+
+/* =============================================
+   TABLET BREAKPOINT (768px+)
+   ============================================= */
+@media (min-width: 768px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .card-img-top {
+    height: 18rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+
+  .add-btn,
+  .edit-btn {
+    width: auto;
+  }
+
+  .btns {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .btns .btn {
+    width: auto;
+  }
+
+  .btns form {
+    width: auto;
+  }
+
+  .btns form .btn {
+    width: auto;
+  }
+
+  #map {
+    height: 350px;
+  }
+
+  .f-info {
+    flex-direction: row;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* =============================================
+   DESKTOP BREAKPOINT (992px+)
+   ============================================= */
+@media (min-width: 992px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .card-img-top {
+    height: 20rem;
+  }
+
+  #map {
+    height: 400px;
+  }
 }

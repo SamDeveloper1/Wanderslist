@@ -3,10 +3,10 @@
 TripNest is a **full-stack travel listing platform** where users can discover unique stays, book accommodations, and generate **AI-powered day-by-day trip itineraries** for any location — all in one place.
 ## 📸 Screenshots
 
-![Home Page](screenshots/home.png)
-![Listing Details](screenshots/listing.png)
-![Booking Modal](screenshots/booking.png)
-![AI Itinerary](screenshots/itinerary.png)
+![Home Page](/public/screenshots/home.png)
+![Listing Details](/public/screenshots/listing.png)
+![Booking Modal](/public/screenshots/booking.png)
+![AI Itinerary](/public/screenshots/itinerary.png)
 
 🌐 **Live Demo:** [tripnest.onrender.com](https://tripnest-9qg6.onrender.com)
 

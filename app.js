@@ -76,14 +76,8 @@ app.use(express.static(path.join(__dirname, "/public")));
 //     res.send("root is working");
 // })
 // Add this route handler (uncomment your existing one or use this)
-app.get('/ping', async (req, res) => {
-  try {
-    // Lightweight ping — just checks connection
-    await mongoose.connection.db.admin().ping();
-    res.json({ status: 'alive', time: new Date() });
-  } catch (err) {
-    res.status(500).json({ error: 'DB unreachable' });
-  }
+app.get('/ping', (req, res) => {
+  res.status(200).send('ok');
 });
 app.get("/", (req, res) => {
     res.redirect("/listings");// Or whatever your main page is

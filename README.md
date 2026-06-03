@@ -3,10 +3,38 @@
 TripNest is a **full-stack travel listing platform** where users can discover unique stays, book accommodations, and generate **AI-powered day-by-day trip itineraries** for any location — all in one place.
 ## 📸 Screenshots
 
-![Home Page](/public/screenshots/home.png)
-![Listing Details](/public/screenshots/listing.png)
-![Booking Modal](/public/screenshots/booking.png)
-![AI Itinerary](/public/screenshots/itinerary.png)
+<table width="100%">
+  <tr>
+    <td colspan="2" align="center" valign="top">
+      <strong>🏠 Home — Listings & Category Filter</strong>
+      <br />
+      <img src="public/screenshots/home.png" alt="Home Screen and Category Filters" width="100%"/>
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="center" width="50%" valign="top">
+      <strong>🏨 Listing Details</strong>
+      <br />
+      <img src="public/screenshots/listing.png" alt="Listing Details View" width="100%"/>
+    </td>
+    <td align="center" width="50%" valign="top">
+      <strong>💳 Booking Modal</strong>
+      <br />
+      <img src="public/screenshots/booking.png" alt="Booking Modal Interface" width="100%"/>
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="center" width="50%" valign="top">
+      <strong>🤖 AI Itinerary Generator</strong>
+      <br />
+      <img src="public/screenshots/itinerary.png" alt="AI Itinerary Feature" width="100%"/>
+    </td>
+    <td width="50%"></td> 
+  </tr>
+</table>
+
 
 🌐 **Live Demo:** [tripnest.onrender.com](https://tripnest-9qg6.onrender.com)
 

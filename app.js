@@ -13,6 +13,8 @@ const ExpressError = require("./utils/ExpressError.js");
 const listingsRoutes = require("./routes/listing.js");
 const reviewsRoutes = require("./routes/review.js");
 const userRoutes = require("./routes/user.js");
+const bookingRoutes = require("./routes/booking.js");
+const itineraryRoutes = require("./routes/itinerary.js");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
@@ -57,8 +59,10 @@ app.engine("ejs", ejsMate);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "/public")));
+
 
 // app.get("/demouser", async (req,res)=>{
 //     let fakeUser = new User({
@@ -100,7 +104,11 @@ app.use((req, res, next) => {
 });
 app.use("/listings", listingsRoutes);
 app.use("/listings/:id/reviews", reviewsRoutes);
+app.use("/listings/:id/booking",bookingRoutes);
+app.use("/listings/:id/itinerary",itineraryRoutes);
 app.use("/", userRoutes);
+
+
 
 // app.all('*', (req,res,next)=>{
 //     next(new ExpressError(404, "Page not found"));
@@ -123,7 +131,13 @@ app.use("/", userRoutes);
 //  res.send("successful testing");
 // });
 
+app.get("/privacy", (req, res) => {
+    res.render("privacy.ejs");
+});
 
+app.get("/terms", (req, res) => {
+    res.render("terms.ejs");
+});
 app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong" } = err;
   res.status(statusCode).render("error.ejs", { message });

@@ -187,9 +187,11 @@ body {
   }
 
   .add-btn,
-  .edit-btn {
-    width: auto;
-  }
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+  width: auto;
+}
 
   .btns {
     flex-direction: row;
